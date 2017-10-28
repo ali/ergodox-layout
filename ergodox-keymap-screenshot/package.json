@@ -1,14 +1,12 @@
 {
-  "name": "ergodox-keymap-screenshot",
+  "name": "ergodox-screenshot-layout",
   "version": "1.0.0",
-  "description": "screenshots your ergodox configuration from the configurator tool",
+  "description": "save a screenshot of your ergodox layout",
   "main": "index.js",
   "author": "Ali Ukani <ali.ukani@gmail.com>",
   "license": "MIT",
   "private": true,
-  "scripts": {
-    "start": "node index.js"
-  },
+  "bin": "./bin/ergodox-screenshot-layout",
   "dependencies": {
     "fs-extra": "^4.0.2",
     "puppeteer": "^0.12.0",
