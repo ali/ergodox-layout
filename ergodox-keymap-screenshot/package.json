@@ -6,7 +6,12 @@
   "author": "Ali Ukani <ali.ukani@gmail.com>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
-    "puppeteer": "^0.12.0"
+    "fs-extra": "^4.0.2",
+    "puppeteer": "^0.12.0",
+    "yargs": "^10.0.3"
   }
 }
