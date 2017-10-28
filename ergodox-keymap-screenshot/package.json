@@ -1,0 +1,12 @@
+{
+  "name": "ergodox-keymap-screenshot",
+  "version": "1.0.0",
+  "description": "screenshots your ergodox configuration from the configurator tool",
+  "main": "index.js",
+  "author": "Ali Ukani <ali.ukani@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "puppeteer": "^0.12.0"
+  }
+}
