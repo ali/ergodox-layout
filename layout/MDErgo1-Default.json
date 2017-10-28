@@ -7,8 +7,12 @@
         "Author": "HaaTa (Jacob Alexander) 2015",
         "KLL": "0.3c",
         "Date": "2015-09-12",
-        "Generator": "KIICONF 0.2"
+        "Generator": "KIICONF 0.2",
+        "Variant": ""
     },
+    "defines": [
+
+    ],
     "matrix": [
         {
             "code": "0x02",
@@ -120,12 +124,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "BACKTICK",
-                    "label": "`"
-                },
-                "2": {
-                    "key": "#:flashMode()",
-                    "label": "FLASH"
+                    "key": "EQUAL",
+                    "label": "="
                 }
             }
         },
@@ -326,8 +326,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "LCK1",
-                    "label": "LOCK-1"
+                    "key": "LALT",
+                    "label": "LALT"
                 }
             }
         },
@@ -339,8 +339,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "LCTRL",
-                    "label": "LCTRL"
+                    "key": "LGUI",
+                    "label": "LGUI"
                 }
             }
         },
@@ -352,8 +352,8 @@
             "h": 6,
             "layers": {
                 "0": {
-                    "key": "LGUI",
-                    "label": "LGUI"
+                    "key": "FUN1",
+                    "label": "\u01921"
                 }
             }
         },
@@ -529,8 +529,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "LGUI",
-                    "label": "LGUI"
+                    "key": "BACKSLASH",
+                    "label": "\\"
                 }
             }
         },
@@ -542,8 +542,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "LALT",
-                    "label": "LALT"
+                    "key": "BACKTICK",
+                    "label": "`"
                 }
             }
         },
@@ -572,8 +572,8 @@
                     "label": "LOCK-2"
                 },
                 "1": {
-                    "key": "SYS:SLEEP",
-                    "label": "SLEEP"
+                    "key": "F12",
+                    "label": "F12"
                 }
             }
         },
@@ -686,12 +686,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "BACKSPACE",
-                    "label": "BKSP"
-                },
-                "2": {
-                    "key": "#:flashMode()",
-                    "label": "FLASH"
+                    "key": "MINUS",
+                    "label": "-"
                 }
             }
         },
@@ -916,8 +912,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "MINUS",
-                    "label": "-"
+                    "key": "RCTRL",
+                    "label": "RCTRL"
                 }
             }
         },
@@ -929,8 +925,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "EQUAL",
-                    "label": "="
+                    "key": "RGUI",
+                    "label": "RGUI"
                 }
             }
         },
@@ -944,10 +940,6 @@
                 "0": {
                     "key": "FUN1",
                     "label": "\u01921"
-                },
-                "1": {
-                    "key": "FUN2",
-                    "label": "\u01922"
                 }
             }
         },
@@ -1186,5 +1178,14 @@
                 }
             }
         }
-    ]
+    ],
+    "leds": [
+
+    ],
+    "custom": {
+
+    },
+    "animations": {
+
+    }
 }
