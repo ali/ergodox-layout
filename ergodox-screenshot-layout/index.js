@@ -93,7 +93,7 @@ async function getKeyboardLayoutScreenshot({
 }) {
   const browser = await puppeteer.launch({
     headless,
-    args: ["--disable-setuid-sandbox", "--no-sandbox"]
+    args: ["--disable-setuid-sandbox", "--no-sandbox"] // 🙈 https://github.com/GoogleChrome/puppeteer/issues/290#issuecomment-322852784
   });
 
   const page = await browser.newPage();
