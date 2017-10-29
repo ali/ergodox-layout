@@ -12,7 +12,8 @@ const argv = yargs.command(
     return yargs.options({
       f: {
         alias: ["file", "layout"],
-        describe: "file path to a keyboard layout JSON file. if omitted, the default layout will be used.",
+        describe:
+          "file path to a keyboard layout JSON file. if omitted, the default layout will be used.",
         normalize: true,
         string: true
       },
@@ -83,7 +84,7 @@ async function saveScreenshot(page, filename) {
 async function getKeyboardLayoutScreenshot({
   pathToLayoutJson,
   screenshotFilename,
-  headless,
+  headless
 }) {
   const browser = await puppeteer.launch({
     headless,
@@ -96,16 +97,18 @@ async function getKeyboardLayoutScreenshot({
   await page.waitFor(".container");
 
   if (pathToLayoutJson) {
-    let layoutJson
+    let layoutJson;
     try {
       layoutJson = await fs.readJson(path.resolve(pathToLayoutJson));
     } catch (e) {
       console.error(e);
-      throw new Error(`Could not read keyboard layout from ${pathToLayoutJson}`)
+      throw new Error(
+        `Could not read keyboard layout from ${pathToLayoutJson}`
+      );
     }
     await importLayout(page, layoutJson);
   } else {
-    console.warn("Using default keyboard layout")
+    console.warn("Using default keyboard layout");
   }
   await saveScreenshot(page, screenshotFilename);
 
