@@ -58,6 +58,7 @@ async function importLayout(page, layoutJson) {
   const layoutTextArea = await page.$(".popup textarea");
   await page.evaluate(
     (textarea, layoutJson) => {
+      // this is a lot faster than elementHandle.type (which emulates keystrokes)
       textarea.value = JSON.stringify(layoutJson, null, 2);
       return Promise.resolve(textarea.value);
     },
