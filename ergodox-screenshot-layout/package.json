@@ -1,0 +1,18 @@
+{
+  "name": "ergodox-screenshot-layout",
+  "version": "1.0.0",
+  "description": "save a screenshot of your ergodox layout",
+  "main": "index.js",
+  "author": "Ali Ukani <ali.ukani@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "bin": "./bin/ergodox-screenshot-layout",
+  "engines": {
+    "node": ">= 8.5.0"
+  },
+  "dependencies": {
+    "fs-extra": "^4.0.2",
+    "puppeteer": "^0.12.0",
+    "yargs": "^10.0.3"
+  }
+}
