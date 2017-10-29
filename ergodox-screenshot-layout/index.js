@@ -12,13 +12,14 @@ const argv = yargs.command(
     return yargs.options({
       f: {
         alias: ["file", "layout"],
-        demandOption: true,
-        describe: "file path to a keyboard layout JSON file",
+        describe: "file path to a keyboard layout JSON file. if omitted, the default layout will be used.",
+        normalize: true,
         string: true
       },
       d: {
         alias: ["dest", "screenshot"],
         describe: "file path to save the screenshot to",
+        normalize: true,
         string: true,
         default: "screenshot.png"
       },
@@ -30,7 +31,11 @@ const argv = yargs.command(
     });
   },
   argv => {
-    return getKeyboardLayoutScreenshot(argv.file, argv.dest, argv.headless);
+    return getKeyboardLayoutScreenshot({
+      pathToLayoutJson: argv.file,
+      screenshotFilename: argv.dest,
+      headless: argv.headless,
+    });
   }
 ).argv;
 
@@ -75,12 +80,11 @@ async function saveScreenshot(page, filename) {
   return await container.screenshot({ path: filename });
 }
 
-async function getKeyboardLayoutScreenshot(
+async function getKeyboardLayoutScreenshot({
   pathToLayoutJson,
   screenshotFilename,
-  headless
-) {
-  const layoutJson = await fs.readJson(path.resolve(pathToLayoutJson));
+  headless,
+}) {
   const browser = await puppeteer.launch({
     headless,
     args: ["--disable-setuid-sandbox", "--no-sandbox"]
@@ -90,7 +94,19 @@ async function getKeyboardLayoutScreenshot(
   await page.goto("https://configurator.inputclub.com/?layout=MDErgo1-Default");
 
   await page.waitFor(".container");
-  await importLayout(page, layoutJson);
+
+  if (pathToLayoutJson) {
+    let layoutJson
+    try {
+      layoutJson = await fs.readJson(path.resolve(pathToLayoutJson));
+    } catch (e) {
+      console.error(e);
+      throw new Error(`Could not read keyboard layout from ${pathToLayoutJson}`)
+    }
+    await importLayout(page, layoutJson);
+  } else {
+    console.warn("Using default keyboard layout")
+  }
   await saveScreenshot(page, screenshotFilename);
 
   console.log("Done");
