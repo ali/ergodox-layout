@@ -6,6 +6,7 @@ Author = "HaaTa (Jacob Alexander) 2015";
 KLL = "0.3c";
 Date = "2015-09-12";
 Generator = "KIICONF 0.2";
+Variant = "";
 
 U"ESC" : U"F11";
 U"5" : U"F5";
@@ -20,7 +21,7 @@ U"S" : CONS"VOLUMEUP";
 U"A" : CONS"VOLUMEDOWN";
 U"FUNCTION5" : CONS"SCANNEXTTRACK";
 U"FUNCTION4" : CONS"SCANPREVIOUSTRACK";
-U"FUNCTION6" : SYS"SLEEP";
+U"FUNCTION6" : U"F12";
 U"6" : U"F6";
 U"7" : U"F7";
 U"8" : U"F8";
@@ -29,8 +30,9 @@ U"0" : U"F10";
 U"O" : CONS"BRIGHTNESSDECREMENT";
 U"P" : CONS"BRIGHTNESSINCREMENT";
 U"L" : U"UP";
-U"FUNCTION7" : U"FUN2";
 U"COMMA" : U"LEFT";
 U"PERIOD" : U"DOWN";
 U"SLASH" : U"RIGHT";
+
+
 
