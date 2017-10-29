@@ -35,7 +35,11 @@ const argv = yargs.command(
     return getKeyboardLayoutScreenshot({
       pathToLayoutJson: argv.file,
       screenshotFilename: argv.dest,
-      headless: argv.headless,
+      headless: argv.headless
+    }).catch(error => {
+      console.error(error);
+      console.error(new Error("Crashed. 👻"));
+      process.exit(1);
     });
   }
 ).argv;
